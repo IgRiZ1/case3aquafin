@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('magazijnen', function (Blueprint $table) {
             $table->id();
+            $table->string('stad');
+            $table->string('adres');
+            $table->integer('postcode');
             $table->timestamps();
         });
     }
