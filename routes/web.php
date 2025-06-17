@@ -15,3 +15,9 @@ Route::post('/logout', function () {
     request()->session()->regenerateToken();
     return redirect('/login');
 })->name('logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/startpagina', function () {
+        return view('startpagina.index');
+    })->name('startpagina');
+});
