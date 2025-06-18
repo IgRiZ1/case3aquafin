@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <title>Producten overzicht</title>
@@ -9,17 +10,22 @@
         body {
             background: #f8f9fa;
         }
-        .header-bg, .footer-bg {
+
+        .header-bg,
+        .footer-bg {
             background: #262a91;
             color: white;
         }
+
         .navbar .navbar-brand img {
             height: 36px;
         }
+
         .navbar-nav .nav-link {
             color: #fff !important;
             font-weight: 500;
         }
+
         .cart-icon {
             font-size: 1.6rem;
             vertical-align: middle;
@@ -36,10 +42,12 @@
             display: flex;
             flex-direction: column;
         }
+
         .product-card:hover {
             transform: translateY(-2px) scale(1.01);
             box-shadow: 0 8px 24px 0 rgba(46, 70, 119, 0.15);
         }
+
         .product-badge {
             background: #fff;
             border-radius: 6px;
@@ -50,6 +58,7 @@
             margin-top: 16px;
             margin-bottom: 10px;
         }
+
         .product-img {
             width: 140px;
             height: 140px;
@@ -57,23 +66,27 @@
             border-radius: 8px;
             margin-bottom: 16px;
         }
+
         .custom-btn {
             background: #231552;
             color: #fff;
             border-radius: 16px;
             border: none;
-            box-shadow: 0 2px 8px 0 rgba(35,21,82,0.15);
+            box-shadow: 0 2px 8px 0 rgba(35, 21, 82, 0.15);
             padding: 7px 32px;
             margin-top: 8px;
         }
+
         .custom-btn:hover {
             background: #4936b1;
             color: #fff;
         }
+
         .row-eq-spacing {
             row-gap: 2.5rem;
             column-gap: 0.5rem;
         }
+
         .footer-bg {
             min-height: 50px;
             display: flex;
@@ -83,9 +96,10 @@
         }
     </style>
 </head>
+
 <body>
     @include('partials.header')
-    
+
     <div class="container py-5">
         <div class="row justify-content-center mb-4">
             <div class="col-12 text-center">
@@ -142,4 +156,5 @@
         <span class="fw-semibold">© {{ date('Y') }} Aquafin - Alle rechten voorbehouden</span>
     </footer>
 </body>
+
 </html>
