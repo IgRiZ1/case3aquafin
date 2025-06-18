@@ -2,28 +2,39 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Seed the application's database.
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => bcrypt('password'),
-            'role' => 'admin',
-        ]);
+        // Zet foreign key checks uit (voor SQLite)
+        \DB::statement('PRAGMA foreign_keys = OFF;');
+        \DB::table('users')->delete();
+        \DB::table('products')->delete();
+        \DB::statement('PRAGMA foreign_keys = ON;');
 
-        User::create([
-            'name' => 'TestUser',
-            'email' => 'test@gmail.com',
+        // User::factory(10)->create();
+
+        User::factory()->create([
+            'name' => 'Test User',
+            'username' => 'testuser',
+            'email' => 'test@example.com',
             'password' => bcrypt('password'),
-            'role' => 'user',
+            'is_admin' => false,
         ]);
+        User::factory()->create([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => 'admin@aquafin.be',
+            'password' => bcrypt('admin123'),
+            'is_admin' => true,
+        ]);
+        $this->call(\Database\Seeders\ProductSeeder::class);
     }
 }

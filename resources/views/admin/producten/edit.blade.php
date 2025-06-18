@@ -18,4 +18,4 @@
         <a href="{{ route('admin.producten.index') }}" class="btn btn-secondary ms-2">Annuleren</a>
     </form>
 </div>
-@endsection
+@endsection 

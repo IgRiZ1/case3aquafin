@@ -10,7 +10,7 @@
         <button type="submit" class="btn btn-primary">Zoeken</button>
     </form>
     @if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     <table class="table table-bordered bg-white admin-table">
         <thead>
@@ -24,22 +24,22 @@
         </thead>
         <tbody>
             @foreach($producten as $product)
-            <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
-                <td><img src="/images/{{ $product->image }}" alt="{{ $product->name }}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;"></td>
-                <td class="d-flex gap-2">
-                    <a href="{{ route('admin.producten.edit', $product->id) }}" class="btn btn-sm btn-primary">Bewerken</a>
-                    <form action="{{ route('admin.producten.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Weet je zeker dat je dit product wilt verwijderen?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Verwijderen</button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ $product->id }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->description }}</td>
+                    <td><img src="/images/{{ $product->image }}" alt="{{ $product->name }}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;"></td>
+                    <td class="d-flex gap-2">
+                        <a href="{{ route('admin.producten.edit', $product->id) }}" class="btn btn-sm btn-primary">Bewerken</a>
+                        <form action="{{ route('admin.producten.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Weet je zeker dat je dit product wilt verwijderen?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger">Verwijderen</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>
 </div>
-@endsection
+@endsection 
