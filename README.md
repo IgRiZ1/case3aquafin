@@ -1,6 +1,7 @@
 # case3aquafin
 
-Dit is een handige Laravel-webapp waarmee je eenvoudig bestellingen kunt beheren via een overzichtelijk beheerderspaneel.
+is een gebruiksvriendelijke Laravel-webapplicatie ontwikkeld als eindproject voor de opleiding Back End Webontwikkeling aan de Erasmushogeschool Brussel. De applicatie stelt techniekers van Aquafin in staat om intern materiaal te bestellen via een intuïtief beheerderspaneel. Alles gebeurt binnen een beveiligde omgeving met rolgebaseerde toegang.
+
 
 ## Inhoudsopgave
 
@@ -9,67 +10,119 @@ Dit is een handige Laravel-webapp waarmee je eenvoudig bestellingen kunt beheren
 -   [Installatie](#installatie)
 -   [Functionaliteiten](#functionaliteiten)
 -   [Gebruik](#gebruik)
--   [Fotos](#Fotos_project)
+-   [Screenshots](#Screenshots)
 -   [Bronnen](#bronnen)
+-   [Technologien](#Gebruikte_technologieën)
 -   [Auteurs](#Auteurs)
 -   [Taak](#Taak_verdeling)
 
----
 
 ## Beschrijving
 
-Dit project is een webapplicatie waar de techniekers van Aquafin bestellingen kunnen plaatsen voor materialen die zij nodig hebben voor hun werk. Op de website is zichtbaar in welk magazijn de producten beschikbaar zijn en wat de levertijd is. Omdat het een interne tool is, zijn alle bestellingen gratis.
+Deze webapplicatie dient als intern bestelsysteem voor Aquafin-medewerkers. Techniekers kunnen snel materialen opzoeken en bestellen die nodig zijn voor hun werkzaamheden. De app toont onder andere in welk magazijn de artikelen beschikbaar zijn, inclusief verwachte levertijd. Bestellingen zijn intern en worden dus niet afgerekend.
+- Daarnaast biedt het beheerderspaneel de mogelijkheid om:
+- Artikelen toe te voegen of te bewerken
+- Bestellingen te bekijken of verwijderen
+-Gebruikersbeheer toe te passen (optioneel uitbreidbaar)
+De applicatie is ontwikkeld met het Laravel PHP-framework, maakt gebruik van Blade templates voor dynamische weergave, en Bootstrap voor een responsieve en gebruiksvriendelijke interface.
 
-Er is ook een admin-paneel waarin beheerders bestellingen kunnen beheren, producten kunnen toevoegen en verwijderen. Het systeem geeft een overzicht van alle bestellingen, met functionaliteiten om deze te bekijken en te verwijderen.
 
-De applicatie is gebouwd met Laravel, gebruikt Blade templates voor de weergave en Bootstrap voor de styling.
-
----
 
 ## Vereisten
 
--   PHP >= 8.0
--   Composer
--   MySQL of een andere ondersteunde database
--   Node.js & npm (optioneel, voor frontend assets)
-
+Om de applicatie lokaal te draaien heb je het volgende nodig:
+- PHP ≥ 8.0
+- Composer
+- MySQL of een andere ondersteunde relationele database
+- Node.js + npm (voor het compileren van frontend-assets)
+- Laravel CLI (optioneel, voor eenvoudiger beheer)
 ---
+
 
 ## Installatie
 
 Volg de onderstaande stappen om het project lokaal op te zetten:
 
--   composer install
--   cp .env.example .env
--   php artisan key:generate
--   DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=laravel_db
-    DB_USERNAME=root
-    DB_PASSWORD=secret
--   npm install
-    npm run dev
--   php artisan migrate
+1. Installeer de PHP- en Node.js-afhankelijkheden:
+   ```bash
+   composer install
+   php artisan breeze:install
+   npm install
+   npm run dev
 
-dan om de server te starten moet je
+2. Kopieer het voorbeeld-configuratiebestand en genereer een applicatiesleutel:
+   cp .env.example .env
+   php artisan key:generate
 
--   php artisan serve
+3. Stel de databaseconfiguratie in in .env (bijvoorbeeld):
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=laravel_db
+   DB_USERNAME=root 
+   DB_PASSWORD=secret
+
+4. Voer de migraties uit:
+   php artisan migrate:fresh
+
+5. voer seeders uit
+   php artisan db:seed
+
+6. Optioneel migraties én seeders in één stap uitvoeren
+   php artisan migrate --seed
+
+7. start de server
+   php artisan serve
+
+
 
 ## Gebruik
 
-Wanneer je de applicatie opent, kom je eerst op de loginpagina terecht. Hier log je in als admin of als gebruiker.
+Wanneer je de applicatie opent, kom je eerst terecht op de loginpagina. Daar kun je inloggen als gewone gebruiker of als admin, afhankelijk van welke account je gebruikt.
 
--   **Als gebruiker**:  
-    Na het inloggen zie je de homepagina met een overzicht van alle artikelen, ingedeeld per categorie. Je kunt artikelen aan je winkelmandje toevoegen en vervolgens kiezen in welke stad je het wilt ontvangen. De bestelling wordt dan automatisch gekoppeld aan het magazijn in die stad en geplaatst.
+Inloggegevens om te testen
 
--   **Als admin**:  
-    Je hebt toegang tot dezelfde functies als een gewone gebruiker, maar daarnaast kun je ook nieuwe artikelen toevoegen, bestaande artikelen bewerken en alle bestellingen beheren.
+Er zijn twee accounts voorzien om de applicatie te testen:
 
-Zo biedt de applicatie een overzichtelijke manier om bestellingen te plaatsen en te beheren, aangepast aan de rol die je hebt.
+- **Admin gebruiker**
+  - Gebruikersnaam: `admin`
+  - E-mail: `admin@aquafin.be`
+  - Wachtwoord: `admin123`
+  - Is admin: Ja ✅
+
+- **Test gebruiker**
+  - Gebruikersnaam: `testuser`
+  - E-mail: `test@example.com`
+  - Wachtwoord: `password`
+  - Is admin: Nee ❌
+
+---
 
 
-## Fotos_project
+Na het inloggen kom je op de homepagina waar je een overzicht ziet van alle artikelen, netjes verdeeld per categorie.  
+Je kunt:
+
+- Artikelen bekijken
+- Ze toevoegen aan je winkelmandje
+- Aangeven in welke stad je het materiaal wilt ontvangen
+
+De bestelling wordt automatisch doorgestuurd naar het magazijn van die stad. Alles gebeurt zonder betaling, omdat het om interne bestellingen gaat.
+
+---
+
+Als admin heb je extra mogelijkheden bovenop wat een gewone gebruiker kan:
+
+- Artikelen toevoegen, aanpassen of verwijderen
+- Bestellingen bekijken of verwijderen
+- (Eventueel) gebruikers beheren
+
+Zo krijg je als admin een handig overzicht en meer controle over het systeem.
+
+Kort samengevat: de applicatie maakt het makkelijk om intern materiaal te bestellen en beheren, en werkt met verschillende rollen (gebruiker of admin) afhankelijk van wie er inlogt.
+
+
+
+## Screenshots
 Komt nog als de website klaar is
 
 
@@ -85,7 +138,26 @@ Komt nog als de website klaar is
 
 - Laravel Blade Templates en Directives  
   [https://laravel.com/docs/10.x/blade#blade-directives]
+  [https://laravel.com/docs/11.x/blade]
   (Gebruikt door Kimberley voor het correct toepassen van Blade-syntax)
+
+- Laravel officieel website
+  [https://laravel.com/]
+  (Gebruikt door Abdullah, Noah voor het opbouwen van laravel & de .env aangemaakt)
+
+- Laravel 
+  [https://laravel.com/docs/12.x/configuration]
+  (Gebruikt door Dalil voor het laravel project te maken & admin erin te zetten)
+
+## Gebruikte_technologieën
+
+- Laravel 10
+- PHP 8.1
+- SQLite
+- Blade templating
+- Bootstrap 5
+- Node.js & npm
+- Git & GitHub
 
 
 ## Auteurs
@@ -94,6 +166,7 @@ Raihane
 Dalil
 Noah
 Abdullah
+
 
 ## Taak_verdeling
 
