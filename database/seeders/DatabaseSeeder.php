@@ -5,16 +5,17 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
     
     public function run(): void
     {
-        \DB::statement('PRAGMA foreign_keys = OFF;');
-        \DB::table('users')->delete();
-        \DB::table('products')->delete();
-        \DB::statement('PRAGMA foreign_keys = ON;');
+        DB::statement('PRAGMA foreign_keys = OFF;');
+        DB::table('users')->delete();
+        DB::table('products')->delete();
+        DB::statement('PRAGMA foreign_keys = ON;');
 
 
         User::factory()->create([
@@ -31,6 +32,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin123'),
             'is_admin' => true,
         ]);
-        $this->call(\Database\Seeders\ProductSeeder::class);
+        $this->call([
+            \Database\Seeders\ProductSeeder::class,
+            \Database\Seeders\CategorySeeder::class
+        ]);
     }
 }
