@@ -139,7 +139,8 @@ Komt nog als de website klaar is
 - Laravel Blade Templates en Directives  
   [https://laravel.com/docs/10.x/blade#blade-directives]
   [https://laravel.com/docs/11.x/blade]
-  (Gebruikt door Kimberley voor het correct toepassen van Blade-syntax)
+  [https://chatgpt.com/share/685285aa-8330-8005-899d-2df043ca925c]
+  (Gebruikt door Kimberley voor het correct toepassen van Blade-syntax & om een goede readme aan te maken)
 
 - Laravel officieel website
   [https://laravel.com/]
@@ -148,6 +149,10 @@ Komt nog als de website klaar is
 - Laravel 
   [https://laravel.com/docs/12.x/configuration]
   (Gebruikt door Dalil voor het laravel project te maken & admin erin te zetten)
+
+- Claude Ai
+  [https://claude.ai/share/378ba3b2-28a7-4b99-96de-9ccaad5db98b]
+  (Gebruikt door Raihane voor de database)
 
 ## Gebruikte_technologieën
 
