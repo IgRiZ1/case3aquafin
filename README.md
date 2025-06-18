@@ -9,6 +9,7 @@ Dit is een handige Laravel-webapp waarmee je eenvoudig bestellingen kunt beheren
 -   [Installatie](#installatie)
 -   [Functionaliteiten](#functionaliteiten)
 -   [Gebruik](#gebruik)
+-   [Fotos](#Fotos_project)
 -   [Bronnen](#bronnen)
 -   [Auteurs](#Auteurs)
 -   [Taak](#Taak_verdeling)
@@ -66,6 +67,11 @@ Wanneer je de applicatie opent, kom je eerst op de loginpagina terecht. Hier log
     Je hebt toegang tot dezelfde functies als een gewone gebruiker, maar daarnaast kun je ook nieuwe artikelen toevoegen, bestaande artikelen bewerken en alle bestellingen beheren.
 
 Zo biedt de applicatie een overzichtelijke manier om bestellingen te plaatsen en te beheren, aangepast aan de rol die je hebt.
+
+
+## Fotos_project
+Komt nog als de website klaar is
+
 
 ## Bronnen
 
