@@ -63,8 +63,10 @@
 </head>
 <body>
     @include('partials.header')
+    <!-- WINKELMANDJE -->
     <div class="cart-container py-4" style="flex:1;">
         <h3 class="mb-4" style="color: #231552;">winkelmandje</h3>
+        <!-- Cart items -->
         @forelse($cartItems as $item)
         <div class="cart-item">
             <img src="/images/{{ $item->product->image }}" class="cart-img" alt="{{ $item->product->name }}">
@@ -109,6 +111,7 @@
         </form>
         @endif
     </div>
+    <!-- FOOTER -->
     <footer class="footer-bg">
         <span class="fw-semibold">© {{ date('Y') }} Aquafin - Alle rechten voorbehouden</span>
     </footer>
