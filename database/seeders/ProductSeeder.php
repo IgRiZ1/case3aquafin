@@ -19,6 +19,7 @@ class ProductSeeder extends Seeder
         DB::statement('PRAGMA foreign_keys=OFF;');
         Product::truncate();
         DB::statement('PRAGMA foreign_keys=ON;');
+        $this->ensureCategoriesExist();
 
         $producten = [
             [
@@ -109,6 +110,17 @@ class ProductSeeder extends Seeder
 
         foreach ($producten as $product) {
             Product::create($product);
+        }
+    }
+    private function ensureCategoriesExist()
+    {
+        $categories = [
+            ['id' => 1, 'name' => 'Safety Equipment'],
+            ['id' => 2, 'name' => 'Tools'],
+            ['id' => 3, 'name' => 'Materials'],
+        ];
+        foreach ($categories as $category) {
+            Category::firstOrCreate(['id' => $category['id']], $category);
         }
     }
 }
