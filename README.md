@@ -1,6 +1,6 @@
 # case3aquafin
 
-is een gebruiksvriendelijke Laravel-webapplicatie ontwikkeld als eindproject voor de opleiding Back End Webontwikkeling aan de Erasmushogeschool Brussel. De applicatie stelt techniekers van Aquafin in staat om intern materiaal te bestellen via een intuïtief beheerderspaneel. Alles gebeurt binnen een beveiligde omgeving met rolgebaseerde toegang.
+Voor ons eindproject in de opleiding Back End Webontwikkeling aan de Erasmushogeschool Brussel heb ik een gebruiksvriendelijke webapplicatie ontwikkeld met Laravel. De tool is bedoeld voor de techniekers van Aquafin, zodat ze intern materiaal kunnen bestellen via een eenvoudig en overzichtelijk beheerderspaneel. Alles gebeurt binnen een veilige omgeving met rolgebaseerde toegangscontrole.
 
 
 ## Inhoudsopgave
