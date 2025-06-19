@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminOrderController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -65,6 +66,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/orders', [\App\Http\Controllers\AdminOrderController::class, 'index'])->name('admin.orders.index');
     Route::get('/admin/orders/{id}', [\App\Http\Controllers\AdminOrderController::class, 'show'])->name('admin.orders.show');
     Route::delete('/admin/orders/{id}', [\App\Http\Controllers\AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
+    // Categoriebeheer
+    Route::get('/admin/categories/create', [\App\Http\Controllers\CategoryController::class, 'create'])->name('admin.categories.create');
+    Route::post('/admin/categories', [\App\Http\Controllers\CategoryController::class, 'store'])->name('admin.categories.store');
 });
 
 Route::get('/producten', [ProductController::class, 'index'])->name('producten.index');

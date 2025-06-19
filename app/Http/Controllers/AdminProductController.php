@@ -57,20 +57,13 @@ class AdminProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'category_id' => 'nullable|exists:categories,id',
-            'new_category' => 'nullable|string|max:255',
+            'category_id' => 'required|exists:categories,id',
         ]);
-
-        $category_id = $request->category_id;
-        if ($request->filled('new_category')) {
-            $category = Category::firstOrCreate(['name' => $request->new_category]);
-            $category_id = $category->id;
-        }
 
         Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            'category_id' => $category_id,
+            'category_id' => $request->category_id,
             'image' => 'default.png',
         ]);
         return redirect()->route('admin.producten.index')->with('success', 'Product toegevoegd!');

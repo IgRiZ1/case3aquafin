@@ -4,6 +4,7 @@
 <div class="container py-5">
     <h2 class="fw-bold mb-4">Producten beheren</h2>
     <a href="{{ route('admin.producten.create') }}" class="btn btn-success mb-4">+ Product toevoegen</a>
+    <a href="{{ route('admin.categories.create') }}" class="btn btn-warning mb-4 ms-2">+ Categorie toevoegen</a>
     <a href="{{ route('admin.orders.index') }}" class="btn btn-primary mb-4 ms-2">Bestellingbeheer</a>
     <form method="GET" action="" class="mb-4 d-flex" style="max-width:400px;">
         <input type="text" name="search" class="form-control me-2" placeholder="Zoek op naam of beschrijving..." value="{{ request('search') }}">

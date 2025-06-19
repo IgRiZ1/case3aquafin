@@ -13,8 +13,6 @@
                     <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
                 @endforeach
             </select>
-            <small class="form-text text-muted">Of voeg hieronder een nieuwe categorie toe:</small>
-            <input type="text" name="new_category" id="new_category" class="form-control mt-2" placeholder="Nieuwe categorie" value="{{ old('new_category') }}">
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Titel</label>
