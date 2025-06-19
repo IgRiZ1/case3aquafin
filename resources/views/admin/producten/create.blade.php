@@ -6,13 +6,15 @@
     <form action="{{ route('admin.producten.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-4 rounded shadow-sm" style="max-width:500px;">
         @csrf
         <div class="mb-3">
-            <label for="category" class="form-label">Categorie</label>
-            <select name="category" id="category" class="form-select" required>
-                <option value="">-- Kies een categorie --</option>
+            <label for="category_id" class="form-label">Categorie</label>
+            <select name="category_id" id="category_id" class="form-select">
+                <option value="">-- Kies een bestaande categorie --</option>
                 @foreach($categories as $cat)
-                <option value="{{ $cat }}" {{ old('category') == $cat ? 'selected' : '' }}>{{ $cat }}</option>
+                    <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
                 @endforeach
             </select>
+            <small class="form-text text-muted">Of voeg hieronder een nieuwe categorie toe:</small>
+            <input type="text" name="new_category" id="new_category" class="form-control mt-2" placeholder="Nieuwe categorie" value="{{ old('new_category') }}">
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Titel</label>

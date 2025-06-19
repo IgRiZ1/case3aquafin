@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
@@ -47,14 +48,7 @@ class AdminProductController extends Controller
 
     public function create()
     {
-        $categories = [
-            'Bevestigingsmateriaal',
-            'Persoonlijke beschermingsmiddelen',
-            'Gereedschap (manueel & elektrisch)',
-            'Technische onderhoudsmaterialen',
-            'Specifieke Aquafin/riolering gerelateerde tools',
-            'Diversen / Verbruiksgoederen',
-        ];
+        $categories = Category::all();
         return view('admin.producten.create', compact('categories'));
     }
 
@@ -63,12 +57,20 @@ class AdminProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'category' => 'required',
+            'category_id' => 'nullable|exists:categories,id',
+            'new_category' => 'nullable|string|max:255',
         ]);
-        \App\Models\Product::create([
+
+        $category_id = $request->category_id;
+        if ($request->filled('new_category')) {
+            $category = Category::firstOrCreate(['name' => $request->new_category]);
+            $category_id = $category->id;
+        }
+
+        Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            'category' => $request->category,
+            'category_id' => $category_id,
             'image' => 'default.png',
         ]);
         return redirect()->route('admin.producten.index')->with('success', 'Product toegevoegd!');

@@ -22,7 +22,8 @@ Route::get('/register', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/startpagina', function () {
-        return view('startpagina.index');
+        $categories = \App\Models\Category::all();
+        return view('startpagina.index', compact('categories'));
     });
     // Admin routes
     Route::get('/admin/producten', function (\Illuminate\Http\Request $request) {

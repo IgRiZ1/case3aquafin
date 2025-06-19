@@ -151,6 +151,29 @@
                     <a href="/producten" class="custom-btn">More</a>
                 </div>
             </div>
+            @php
+                $vaste = [
+                    'Bevestigingsmateriaal',
+                    'Persoonlijke beschermingsmiddelen',
+                    'Gereedschap (manueel & elektrisch)',
+                    'Technische onderhoudsmaterialen',
+                    'Specifieke Aquafin/riolering gerelateerde tools',
+                    'Diversen / Verbruiksgoederen',
+                ];
+            @endphp
+            @if(isset($categories))
+                @foreach($categories as $category)
+                    @if(!in_array($category->name, $vaste))
+                        <div class="col d-flex">
+                            <div class="card product-card w-100">
+                                <div class="product-badge">{{ $category->name }}</div>
+                                <img src="/images/default.png" class="product-img" alt="{{ $category->name }}">
+                                <a href="/producten" class="custom-btn">More</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @endif
         </div>
     </div>
     <!-- FOOTER -->
