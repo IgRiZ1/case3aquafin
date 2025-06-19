@@ -21,7 +21,7 @@
                             <form action="{{ route('admin.orders.arrived', $order->id) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-success">Aangekomen</button>
+                                <button type="submit" class="btn btn-success">Verwerkt</button>
                             </form>
                         @endif
                         <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" onsubmit="return confirm('Weet je zeker dat je deze bestelling wilt verwijderen?');">

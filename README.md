@@ -152,6 +152,9 @@ Komt nog als de website klaar is
 -   Claude Ai
     [https://claude.ai/share/378ba3b2-28a7-4b99-96de-9ccaad5db98b]
     (Gebruikt door Raihane voor de database)
+-   Cursor
+    [https://www.cursor.com/]
+    (Gebruikt door Noah en Abdullah)
 
 ## Gebruikte_technologieën
 
