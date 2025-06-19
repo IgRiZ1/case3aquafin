@@ -97,6 +97,19 @@
             justify-content: center;
             margin-top: 40px;
         }
+
+        .search-btn {
+            background-color: #231552;
+            color: #fff;
+            border: none;
+            box-shadow: 0 2px 8px 0 rgba(35, 21, 82, 0.15);
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #4936b1;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -109,6 +122,16 @@
                 <h2 class="fw-bold" style="color: #231552;">Beschermingsproducten</h2>
             </div>
         </div>
+        <form method="GET" action="{{ route('producten.index') }}" class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div class="input-group shadow-sm">
+                    <input type="text" name="search" class="form-control form-control-lg" placeholder="Zoek op naam of beschrijving..." value="{{ request('search') }}">
+                    <button class="btn search-btn" type="submit">
+                        <i class="bi bi-search"></i> Zoeken
+                    </button>
+                </div>
+            </div>
+        </form>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-eq-spacing justify-content-center">
             @foreach($producten as $product)
             <div class="col d-flex">

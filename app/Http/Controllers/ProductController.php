@@ -13,9 +13,17 @@ class ProductController extends Controller
         return view('producten.show', compact('product'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $producten = \App\Models\Product::all();
+        $search = $request->input('search');
+
+        $producten = Product::query()
+            ->when($search, function ($query, $search) {
+                $query->where('name', 'like', "%{$search}%")
+                      ->orWhere('description', 'like', "%{$search}%");
+            })
+            ->get();
+
         return view('producten.index', compact('producten'));
     }
-} 
+}
