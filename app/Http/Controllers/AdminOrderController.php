@@ -25,4 +25,12 @@ class AdminOrderController extends Controller
         $order->delete();
         return redirect()->route('admin.orders.index')->with('success', 'Bestelling verwijderd!');
     }
+
+    public function markArrived($id)
+    {
+        $order = \App\Models\Order::findOrFail($id);
+        $order->status = 'Aangekomen';
+        $order->save();
+        return redirect()->route('admin.orders.index')->with('success', 'Bestelling gemarkeerd als aangekomen!');
+    }
 }
