@@ -11,13 +11,17 @@
         <script>window.location = '/startpagina';</script>
     @endif
 
+    <!-- De balkje van boven -->
     <header class="bg-indigo-900 h-16 flex items-center justify-start shadow-md gap-6">
         <img src="{{ asset('images/aquafin.png') }}" alt="Aquafin" class="h-8">
     </header>
 
+    <!-- Inhoud van de pagina -->
     <main class="flex flex-col items-center justify-center flex-grow py-10 px-4">
+        <!-- Groot logo -->
         <img src="{{ asset('images/aquafin.png') }}" alt="Aquafin" class="w-80 mb-8">
 
+        <!-- Formulier -->
          <form method="POST" action="{{ route('login.attempt') }}" class="bg-gray-100 p-6 rounded-xl shadow-md w-full max-w-2xl space-y-4">
         @csrf
         @if($errors->any())
@@ -44,6 +48,7 @@
         </form>
     </main>
 
+        <!-- Footer -->
         <footer class="bg-gray-900 h-6"></footer>
     </body>
 </html>

@@ -19,8 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -45,8 +47,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function getIsAdminAttribute() {
-    return $this->role === 'admin'; 
-}
-
 }

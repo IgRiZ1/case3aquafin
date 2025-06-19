@@ -8,14 +8,18 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
+        // Zet foreign key checks uit (voor SQLite)
         \DB::statement('PRAGMA foreign_keys = OFF;');
         \DB::table('users')->delete();
         \DB::table('products')->delete();
         \DB::statement('PRAGMA foreign_keys = ON;');
 
+        // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',

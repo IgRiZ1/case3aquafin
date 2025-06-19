@@ -41,10 +41,12 @@ class CartController extends Controller
         if ($cartItems->isEmpty()) {
             return redirect()->back()->with('error', 'Je winkelmandje is leeg.');
         }
+        // Maak een nieuwe order aan
         $order = Order::create([
             'user_id' => $user->id,
             'status' => 'In proces',
         ]);
+        // Voeg alle cart items toe als order items
         foreach ($cartItems as $item) {
             OrderItem::create([
                 'order_id' => $order->id,
@@ -52,6 +54,7 @@ class CartController extends Controller
                 'quantity' => $item->quantity,
             ]);
         }
+        // Leeg de cart
         Cart::where('user_id', $user->id)->delete();
         return redirect()->route('cart.confirmation')->with('success', 'Bestelling geplaatst!');
     }

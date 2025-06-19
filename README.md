@@ -1,5 +1,6 @@
-# case3aquafin
+# projectcase3
 
+<<<<<<< HEAD
 Voor ons eindproject in de opleiding Back End Webontwikkeling aan de Erasmushogeschool Brussel heb ik een gebruiksvriendelijke webapplicatie ontwikkeld met Laravel. De tool is bedoeld voor de techniekers van Aquafin, zodat ze intern materiaal kunnen bestellen via een eenvoudig en overzichtelijk beheerderspaneel. Alles gebeurt binnen een veilige omgeving met rolgebaseerde toegangscontrole.
 
 
@@ -184,3 +185,4 @@ Abdullah
 | Testen & kwaliteitscontrole | Noah                         |
 | Documentatie                | kimberley                    |
 | Support & onderhoud         | Groep 6                      |
+
