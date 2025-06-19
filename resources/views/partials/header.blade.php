@@ -1,4 +1,12 @@
-<nav class="navbar header-bg shadow-sm px-2" style="background:#262a91; color:white;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar header-bg shadow-sm px-2" style="background:#262a91; color:white;">
     <div class="container-fluid d-flex justify-content-between align-items-center py-2">
         <!-- Logo + homepage -->
         @if (!Request::is('login'))
@@ -28,3 +36,6 @@
         </div>
     </div>
 </nav>
+
+</body>
+</html>
