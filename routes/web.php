@@ -69,6 +69,8 @@ Route::middleware(['auth'])->group(function () {
     // Categoriebeheer
     Route::get('/admin/categories/create', [\App\Http\Controllers\CategoryController::class, 'create'])->name('admin.categories.create');
     Route::post('/admin/categories', [\App\Http\Controllers\CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::delete('/admin/categories/{id}', [\App\Http\Controllers\CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+    Route::get('/admin/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('admin.categories.index');
 });
 
 Route::get('/producten', [ProductController::class, 'index'])->name('producten.index');

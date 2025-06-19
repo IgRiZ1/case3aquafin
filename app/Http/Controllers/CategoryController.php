@@ -20,4 +20,17 @@ class CategoryController extends Controller
         Category::create(['name' => $request->name]);
         return redirect()->route('admin.producten.index')->with('success', 'Categorie toegevoegd!');
     }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('admin.producten.index')->with('success', 'Categorie verwijderd!');
+    }
+
+    public function index()
+    {
+        $categories = Category::all();
+        return view('admin.categories.index', compact('categories'));
+    }
 } 
