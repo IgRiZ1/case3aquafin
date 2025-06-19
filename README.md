@@ -75,6 +75,31 @@ Volg de onderstaande stappen om het project lokaal op te zetten:
 7. start de server
    php artisan serve
 
+## ❗ Probleemoplossing: Error 500 bij opstarten
+
+Als je bij het openen van `http://localhost:8000` een **"Error 500"** krijgt, volg dan deze stappen:
+
+1. **Controleer of het `.env`-bestand aanwezig is**
+
+    - Zo niet, maak het aan met:
+        ```bash
+        cp .env.example .env
+        ```
+
+2. **Genereer de Laravel app key**
+
+    ```bash
+    1: php artisan key:generate
+    2: touch database/database.sqlite
+
+    Dit toevoegen aan de env.
+    3: DB_CONNECTION=sqlite
+       DB_DATABASE=database/database.sqlite
+
+    4:php artisan migrate
+    5:php artisan serve
+    ```
+
 ## Gebruik
 
 Wanneer je de applicatie opent, kom je eerst terecht op de loginpagina. Daar kun je inloggen als gewone gebruiker of als admin, afhankelijk van welke account je gebruikt.
