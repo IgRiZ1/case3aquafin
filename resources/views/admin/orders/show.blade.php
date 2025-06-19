@@ -15,13 +15,13 @@
         </thead>
         <tbody>
             @foreach($order->orderItems as $item)
-                <tr>
-                    <td>{{ $item->product->name ?? '-' }}</td>
-                    <td>{{ $item->quantity }}</td>
-                </tr>
+            <tr>
+                <td>{{ $item->product->name ?? '-' }}</td>
+                <td>{{ $item->quantity }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>
     <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary mt-3">Terug naar overzicht</a>
 </div>
-@endsection 
+@endsection

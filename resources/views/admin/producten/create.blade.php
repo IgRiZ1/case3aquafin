@@ -10,7 +10,7 @@
             <select name="category" id="category" class="form-select" required>
                 <option value="">-- Kies een categorie --</option>
                 @foreach($categories as $cat)
-                    <option value="{{ $cat }}" {{ old('category') == $cat ? 'selected' : '' }}>{{ $cat }}</option>
+                <option value="{{ $cat }}" {{ old('category') == $cat ? 'selected' : '' }}>{{ $cat }}</option>
                 @endforeach
             </select>
         </div>
@@ -26,4 +26,4 @@
         <a href="{{ route('admin.producten.index') }}" class="btn btn-secondary ms-2">Annuleren</a>
     </form>
 </div>
-@endsection 
+@endsection
