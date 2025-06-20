@@ -143,7 +143,6 @@ Zo krijg je als admin een handig overzicht en meer controle over het systeem.
 
 Kort samengevat: de applicatie maakt het makkelijk om intern materiaal te bestellen en beheren, en werkt met verschillende rollen (gebruiker of admin) afhankelijk van wie er inlogt.
 
-
 ## Bronnen
 
 -   **Lessen Back End Webontwikkeling (Erasmushogeschool Brussel)**
@@ -206,3 +205,25 @@ Abdullah
 | Testen & kwaliteitscontrole | Noah                      |
 | Documentatie                | kimberley                 |
 | Support & onderhoud         | Groep 6                   |
+
+## Screenshots
+
+![alt text](screenshots/login1.png)
+
+![alt text](screenshots/startpagina1.png)
+
+![alt text](screenshots/producten1.png)
+
+![alt text](screenshots/bestelling1.png)
+
+![alt text](screenshots/winkelmand1.png)
+
+![alt text](screenshots/bevestiging1.png)
+
+![alt text](screenshots/itembeheer1.png)
+
+![alt text](screenshots/productaanmaken1.png)
+
+![alt text](screenshots/categorie1.png)
+
+![alt text](screenshots/bestellingbeheer1.png)
