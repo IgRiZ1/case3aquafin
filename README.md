@@ -9,7 +9,6 @@ Voor ons eindproject in de opleiding Back End Webontwikkeling aan de Erasmushoge
 -   [Installatie](#installatie)
 -   [Functionaliteiten](#functionaliteiten)
 -   [Gebruik](#gebruik)
--   [Screenshots](#Screenshots)
 -   [Bronnen](#bronnen)
 -   [Technologien](#Gebruikte_technologieën)
 -   [Auteurs](#Auteurs)
@@ -144,9 +143,6 @@ Zo krijg je als admin een handig overzicht en meer controle over het systeem.
 
 Kort samengevat: de applicatie maakt het makkelijk om intern materiaal te bestellen en beheren, en werkt met verschillende rollen (gebruiker of admin) afhankelijk van wie er inlogt.
 
-## Screenshots
-
-Komt nog als de website klaar is
 
 ## Bronnen
 

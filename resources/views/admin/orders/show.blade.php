@@ -3,6 +3,7 @@
 @section('content')
 <div class="container py-5">
     <h2 class="fw-bold mb-4">Bestelling #{{ $order->id }}</h2>
+    {{-- Bestelstatus en gebruikersinformatie --}}
     <div class="mb-3"><b>Status:</b> {{ $order->status }}</div>
     <div class="mb-3"><b>Gebruiker:</b> {{ $order->user->username ?? $order->user->email ?? '-' }}</div>
     <h4 class="mt-4 mb-2">Producten</h4>

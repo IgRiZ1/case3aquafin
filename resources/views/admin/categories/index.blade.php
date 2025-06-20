@@ -7,6 +7,7 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
+    {{-- Tabel met een lijst van categorieën --}}
     <table class="table table-bordered bg-white">
         <thead>
             <tr>
